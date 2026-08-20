@@ -1,0 +1,8 @@
+@model IEnumerable<MultipleAssigneeViewModel>
+@{ ViewData["Title"] = "MultipleAssignees"; }
+<h1>MultipleAssignees</h1>
+<table><thead><tr>
+<th>Ticket</th><th>Subject</th><th>Number of Active Assignees</th><th>Assignees</th>
+</tr></thead><tbody>
+@foreach(var x in Model){<tr><td>#@x.TicketId</td><td>@x.Subject</td><td>@x.NumberOfActiveAssignees</td><td>@x.Assignees</td></tr>}
+</tbody></table>

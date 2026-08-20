@@ -1,0 +1,8 @@
+@model IEnumerable<DepartmentWorkloadViewModel>
+@{ ViewData["Title"] = "DepartmentWorkload"; }
+<h1>DepartmentWorkload</h1>
+<table><thead><tr>
+<th>Department</th><th>Employee Count</th><th>Unresolved Ticket Count</th>
+</tr></thead><tbody>
+@foreach(var x in Model){<tr><td>@x.Department</td><td>@x.EmployeeCount</td><td>@x.UnresolvedTicketCount</td></tr>}
+</tbody></table>

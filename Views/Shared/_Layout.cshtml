@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Help Desk</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+<header><nav class="nav"><a asp-controller="Home" asp-action="Index">Help Desk</a><a asp-controller="Departments" asp-action="Index">Departments</a><a asp-controller="Employees" asp-action="Index">Employees</a><a asp-controller="Teams" asp-action="Index">Teams</a><a asp-controller="Customers" asp-action="Index">Customers</a><a asp-controller="Tickets" asp-action="Index">Tickets</a><span class="reports">Reports: <a asp-controller="Reports" asp-action="EmployeeWorkload">Employee</a> <a asp-controller="Reports" asp-action="DepartmentWorkload">Department</a> <a asp-controller="Reports" asp-action="UnassignedTickets">Unassigned</a> <a asp-controller="Reports" asp-action="MultipleAssignees">Multi</a> <a asp-controller="Reports" asp-action="PrimaryAssignee">Primary</a> <a asp-controller="Reports" asp-action="CategoryHierarchy">Categories</a></span></nav></header>
+<main class="container">@RenderBody()</main>
+</body>
+</html>

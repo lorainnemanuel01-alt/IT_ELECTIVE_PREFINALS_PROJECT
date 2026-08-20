@@ -1,0 +1,8 @@
+@model Ticket
+@{ ViewData["Title"] = "Ticket Details"; }
+<h1>Ticket #@Model.Id - @Model.Subject</h1>
+<div class="card"><p><b>Customer:</b> @Model.Customer.CompanyName (@Model.Customer.ContactName)</p><p><b>Category:</b> @Model.Category.Name</p><p><b>Priority:</b> @Model.Priority.Name</p><p><b>Status:</b> @Model.Status.Name</p><p><b>Created:</b> @Model.CreatedAt</p><p><b>Due:</b> @(Model.DueAt?.ToString() ?? "—")</p><p><b>Description:</b> @Model.Description</p></div>
+<div class="card"><h2>Assignments</h2><ul>@foreach(var a in Model.Assignments.Where(x=>x.UnassignedAt==null)){<li>@a.Employee.FullName @(a.IsPrimary ? "(Primary)" : "")</li>}</ul></div>
+<div class="card"><h2>Comments</h2>@foreach(var c in Model.Comments.OrderBy(c=>c.CreatedAt)){<p><b>@(c.Employee?.FullName ?? "Unknown")</b> — @c.CreatedAt<br/>@c.Comment @(c.IsInternal ? "[Internal]" : "")</p>}</div>
+<div class="card"><h2>Tags</h2><p>@string.Join(", ", Model.TicketTags.Select(x=>x.Tag.Name))</p></div>
+<div class="card"><h2>Attachments</h2><ul>@foreach(var a in Model.Attachments){<li>@a.FileName (@a.ContentType, @a.FileSize bytes) — @a.UploadedAt</li>}</ul></div>
