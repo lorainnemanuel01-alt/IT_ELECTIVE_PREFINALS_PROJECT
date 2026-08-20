@@ -1,0 +1,3 @@
+@model IEnumerable<Department>
+@{ ViewData["Title"] = "Departments"; }
+<h1>Departments</h1><table><thead><tr><th>Name</th><th>Description</th><th>Active</th><th>Employee Count</th></tr></thead><tbody>@foreach(var d in Model){<tr><td>@d.Name</td><td>@d.Description</td><td>@d.IsActive</td><td>@d.Employees.Count</td></tr>}</tbody></table>

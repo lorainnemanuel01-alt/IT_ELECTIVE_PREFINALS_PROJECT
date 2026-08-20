@@ -1,0 +1,6 @@
+@{ ViewData["Title"] = "Home"; }
+<div class="card"><h1>Help Desk System</h1><p>ASP.NET Core MVC + Entity Framework Core Database-First application using the supplied SQLite database.</p></div>
+<div class="grid">
+<div class="card"><h2>Browse</h2><p><a class="button" asp-controller="Departments" asp-action="Index">Departments</a></p><p><a class="button" asp-controller="Employees" asp-action="Index">Employees</a></p><p><a class="button" asp-controller="Customers" asp-action="Index">Customers</a></p><p><a class="button" asp-controller="Teams" asp-action="Index">Teams</a></p><p><a class="button" asp-controller="Tickets" asp-action="Index">Tickets</a></p></div>
+<div class="card"><h2>Required Queries</h2><p><a asp-controller="Reports" asp-action="EmployeeWorkload">Employee Workload</a></p><p><a asp-controller="Reports" asp-action="DepartmentWorkload">Department Workload</a></p><p><a asp-controller="Reports" asp-action="UnassignedTickets">Unassigned Tickets</a></p><p><a asp-controller="Reports" asp-action="MultipleAssignees">Multiple-Assignee Tickets</a></p><p><a asp-controller="Reports" asp-action="PrimaryAssignee">Primary Assignee</a></p><p><a asp-controller="Reports" asp-action="CategoryHierarchy">Category Hierarchy</a></p></div>
+</div>

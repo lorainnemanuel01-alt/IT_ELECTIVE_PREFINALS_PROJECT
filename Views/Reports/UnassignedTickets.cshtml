@@ -1,0 +1,8 @@
+@model IEnumerable<UnassignedTicketViewModel>
+@{ ViewData["Title"] = "UnassignedTickets"; }
+<h1>UnassignedTickets</h1>
+<table><thead><tr>
+<th>Ticket</th><th>Subject</th><th>Customer</th><th>Priority</th><th>Status</th><th>Created At</th>
+</tr></thead><tbody>
+@foreach(var x in Model){<tr><td><a asp-controller="Tickets" asp-action="Details" asp-route-id="@x.TicketId">#@x.TicketId</a></td><td>@x.Subject</td><td>@x.Customer</td><td>@x.Priority</td><td>@x.Status</td><td>@x.CreatedAt</td></tr>}
+</tbody></table>
