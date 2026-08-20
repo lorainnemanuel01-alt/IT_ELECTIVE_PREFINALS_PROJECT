@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "IT_ELECTIVE_PREFINALS_PROJECT": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:51268;http://localhost:51269"
+    }
+  }
+}
